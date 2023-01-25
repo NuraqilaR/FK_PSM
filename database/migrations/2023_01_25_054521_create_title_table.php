@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('title', function (Blueprint $table) {
             $table->bigIncrements('Reg_id');
-            $table->string('Stu_Title');
             $table->string('Stu_SVName');
+            $table->string('Stu_Title');
             $table->string('Stu_Objective');
             $table->string('Stu_Scope');
             $table->string('Stu_ProbStat');
