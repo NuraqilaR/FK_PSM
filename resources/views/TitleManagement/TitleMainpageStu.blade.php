@@ -28,3 +28,14 @@
         </div>
     </div>
 
+
+    <div class="container">
+        <div class="row" style="padding:25px;background-color:#e2e9e9" >
+            <div class="mx-auto" style="width: 100%;">
+                <div class="card" style="background-color:#11ADA4;padding:10px;color:white;width:100%;" >
+
+                </div>
+            </div>
+        </div>
+    </div>        
+
