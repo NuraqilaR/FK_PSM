@@ -14,10 +14,6 @@ class TitleController extends Controller
         return view ('TitleManagement.TitleMainpageStu')->with('title', $title);
     }
 
-    public function create()
-    {
-        return view ('TitleManagement.RegisterTitle');
-    }
 
     //Register Title (add)
      public function CreateRegistration(Request $request)
@@ -33,7 +29,7 @@ class TitleController extends Controller
             'Stu_Approach'  => 'required',
         ]);
         \App\Models\title::create($request->all());
-        return redirect('/registertitle')->with('success','New Data Successfully Inserted');
+        return redirect('/TitleMainpageStu')->with('success','New Data Successfully Inserted');
      }
 
     //  public function show ($Reg_id)

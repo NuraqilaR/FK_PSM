@@ -54,7 +54,7 @@
                     </div> --}}
 
                     <div class="card-body">
-                        <form action="{{url('/titleregister/{{$title->Reg_id}}/update')}}" method="POST" >
+                        <form action="{{url('/ViewRegisterStatus/{{$title->Reg_id}}/update')}}" method="POST" >
                             {{!!csrf_field()}}                          
 
                             <h5><b>SECTION A: PROJECT DETAILS</b></h5><br>
