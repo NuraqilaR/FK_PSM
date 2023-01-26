@@ -55,6 +55,11 @@
                                 {{ __('Appointment Requests') }}
                             </x-jet-nav-link>
                         </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('lecturerReport') }}" :active="request()->routeIs('lecturerReport')">
+                                {{ __('Report Progress') }}
+                            </x-jet-nav-link>
+                        </div>
                     </div>
 
             <!-- For Student -->
@@ -84,6 +89,11 @@
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-jet-nav-link href="{{ route('schedule.index') }}" :active="request()->routeIs('schedule')">
                                 {{ __('Schedule Appointment') }}
+                            </x-jet-nav-link>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('reports.index') }}" :active="request()->routeIs('reports.index')">
+                                {{ __('Report Progress') }}
                             </x-jet-nav-link>
                         </div>
                     </div>

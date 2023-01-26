@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\TitleController;
 
@@ -83,3 +84,14 @@ Route::put('/schedule-accept', [App\Http\Controllers\ScheduleController::class, 
 Route::put('/schedule-reject', [App\Http\Controllers\ScheduleController::class, 'rejectSchedule'])->name('rejectReq');
 
 Route::resource('/schedule', ScheduleController::class);
+
+
+//ady report
+Route::resource('reports', ReportController::class);
+
+Route::get('lecturerReport', [ReportController::class, 'lecturerShow'])->name('lecturerReport');
+
+Route::get('lecturerView/{report}', [ReportController::class, 'lecturerView'])->name('lecturerView');
+
+Route::put('lecturerAccept', [ReportController::class, 'lecturerApprove'])->name('lecturerApprove');
+
