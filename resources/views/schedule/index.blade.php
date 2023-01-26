@@ -1,3 +1,4 @@
+@auth
 <!doctype html>
 <x-app-layout>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -17,3 +18,8 @@
 </body>
 </x-app-layout>
 </html>
+@endauth
+
+@guest
+    <script>window.location.replace("/login");</script>
+@endguest
