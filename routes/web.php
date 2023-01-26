@@ -32,9 +32,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
     
-    // Route::get('/TitleMainpageStu', function () {
-    //     return view('titlemainpagestu');
-    // })->name('TitleManagement.TitleMainpageStu');
+
     
 });
 
@@ -46,40 +44,6 @@ Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 Route::get('/userList', [HomeController::class, 'userList'])->name('userList');
 
 
-/*
-|--------------------------------------------------------------------------
-|MANAGE TITLE - TIM
-|--------------------------------------------------------------------------
-|
-*/
-
-// //Mainpage of student
-// Route::get('/TitleMainpageStu', [TitleController::class, ('titlemainpagestu')]);
-
-// //Add Registration info
-// Route::get('/RegisterTitle', function () {
-//     return view('TitleManagement.RegisterTitle');
-// });
-
-// //View Registration Status
-// // Route::get('/ViewRegistrationStatus', function () {
-// //     return view('TitleManagement.ViewRegistrationStatus');
-// // });
-
-// //create registration
-
-// Route::post('/registertitle/create','App\Http\Controllers\TitleController@CreateRegistration');
-
-// //edit form
-// Route::get('/registertitle/{Reg_id}/edit','App\Http\Controllers\TitleController@EditRegister');
-
-// //update
-// Route::post('/registertitle/{Reg_id}/update','App\Http\Controllers\TitleController@update');
-
-// //delete
-// Route::get('/registertitle/{Reg_id}/delete','App\Http\Controllers\TitleController@delete');
-
-// Route::resource('/TitleManagement', TitleController::class);
 
 /*
 |--------------------------------------------------------------------------
