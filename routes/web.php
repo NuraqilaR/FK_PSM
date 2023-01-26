@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\TitleController;
 
 /*
@@ -46,7 +47,7 @@ Route::get('/userList', [HomeController::class, 'userList'])->name('userList');
 
 /*
 |--------------------------------------------------------------------------
-|MANAGE TITLE
+|MANAGE TITLE - TIM
 |--------------------------------------------------------------------------
 |
 */
@@ -76,3 +77,17 @@ Route::post('/registertitle/{Reg_id}/update','App\Http\Controllers\TitleControll
 
 //delete
 Route::get('/registertitle/{Reg_id}/delete','App\Http\Controllers\TitleController@delete');
+
+Route::resource('/TitleManagement', TitleController::class);
+
+/*
+|--------------------------------------------------------------------------
+|Schedule -Takippu
+|--------------------------------------------------------------------------
+|
+*/
+Route::get('/schedule-requests', [App\Http\Controllers\ScheduleController::class, 'indexReq'])->name('scheduleReq');
+Route::put('/schedule-accept', [App\Http\Controllers\ScheduleController::class, 'acceptSchedule'])->name('acceptReq');
+Route::put('/schedule-reject', [App\Http\Controllers\ScheduleController::class, 'rejectSchedule'])->name('rejectReq');
+
+Route::resource('/schedule', ScheduleController::class);
