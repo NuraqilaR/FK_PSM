@@ -41,7 +41,6 @@ Route::middleware([
 Route::get('/coordinator', [HomeController::class, 'index'])->name('coordinator');
 Route::get('/lecturer', [HomeController::class, 'index'])->name('lecturer');
 Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
-
 Route::get('/userList', [HomeController::class, 'userList'])->name('userList');
 
 
@@ -117,13 +116,45 @@ Route::get('sviewPTA','App\Http\Controllers\RubricController@sviewPTA');
 
 /*
 |--------------------------------------------------------------------------
-| Evaluator (MANAGE RUBRIC)
+| Manage Rubric - evaluator
 |--------------------------------------------------------------------------
 */
 
-Route::middleware(['auth:evaluator'])->group(function(){
-Route::get('EvalView','App\Http\Controllers\RubricController@EvaviewRubric');
+
+Route::get('EvaluatorView','App\Http\Controllers\RubricController@EvaviewRubric');
 Route::get('eviewPSM1','App\Http\Controllers\RubricController@eviewPSM1');
 Route::get('eviewPSM2','App\Http\Controllers\RubricController@eviewPSM2');
 Route::get('eviewPTA','App\Http\Controllers\RubricController@eviewPTA');
+
+
+
+//Mainpage of student
+Route::get('/TitleMainpageStu', [TitleController::class, ('TitleMainpageStu')]);
+
+//Add Registration info
+Route::get('/RegisterTitle', function () {
+    return view('TitleManagement.RegisterTitle');
 });
+
+//View Registration Status
+// Route::get('/ViewRegistrationStatus', function () {
+//     return view('TitleManagement.ViewRegistrationStatus');
+// });
+
+Route::get('/titleregister', function() {
+    return view('TitleManagement.ViewRwgisterStatus');
+});
+//create registration
+
+Route::post('/registertitle','App\Http\Controllers\TitleController@CreateRegistration');
+
+//edit form
+Route::get('/registertitle/{Reg_id}/edit','App\Http\Controllers\TitleController@EditRegister');
+
+//update
+Route::post('/registertitle/{Reg_id}/update','App\Http\Controllers\TitleController@update');
+
+//delete
+Route::get('/registertitle/{Reg_id}/delete','App\Http\Controllers\TitleController@delete');
+
+Route::resource('/TitleManagement', TitleController::class);

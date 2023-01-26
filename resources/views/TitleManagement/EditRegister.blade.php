@@ -54,15 +54,16 @@
                     </div> --}}
 
                     <div class="card-body">
-                        <form action="{{url('/ViewRegisterStatus/{{$title->Reg_id}}/update')}}" method="POST" >
-                            {{!!csrf_field()}}                          
+                        <form action="{{url('title/'$title->Reg_id.'/update')}}" method="GET" >
+                            {{!!csrf_field()}}
+                            @method("PATCH")                         
 
                             <h5><b>SECTION A: PROJECT DETAILS</b></h5><br>
                             
                             <!-- Supervisor's Name -->
                             <div class="mb-3">
                                 <label for="Stu_SVName" class="form-label"><b>SUPERVISOR NAME</b></label>
-                                <input name="Stu_SVName" type="text" class="form-control" id="Stu_SVName" value="{{$title->Stu_SVName}}>
+                                <input name="Stu_SVName" type="text" class="form-control" id="Stu_SVName" value="{{$title->Stu_SVName}}">
                             </div>
 
                             <!-- Proposed Title -->
@@ -111,7 +112,7 @@
                                 <input name="Stu_Approach" type="text" class="form-control" id="Stu_Approach" value="{{$title->Stu_SVName}}">
                             </div>
                             
-                            <button type="submit" class="btn btn-primary float-end">SUBMIT</button>
+                            <button type="submit" class="btn btn-primary float-end">UPDATE</button>
                         </form>
                     </div>
                 </div>

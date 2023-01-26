@@ -52,21 +52,6 @@
                     <center><h3><b>TITLE PROPOSAL FORM</b></h3></center><br>
                     <center><h4><b>BCC3012 UNDERGRADUATE I</b></h4></center><br>
 
-                        {{-- <div class="card-body"> --}}
-                            
-                            {{-- <h5><b>SECTION A: STUDENT DETAILS</b></h5><br><br> --}}
-
-                            {{-- <center>
-                            <tr>
-                                <th class="card-text"><b>NAME </b>{{ $activities->Activity_name }}</p>
-                                <th class="card-text"><b>MATRIC ID </b>{{ $activities->Activity_info }}</p>
-                                <th class="card-text"><b>IC/PASSPORT </b>{{ $activities->Activity_category }}</p>
-                                <th class="card-text"><b>PHONE NUMBER </b>{{ $activities->Activity_date }}</p>
-                                <th class="card-text"><b>E-MAIL </b>{{ $activities->Activity_time }}</p>
-                                <th class="card-text"><b>COURSE</b>{{ $activities->Activity_time }}</p>
-                            </tr>
-                            </center>
-                        </div> --}}
 
                         <div class="card-body">
                             <form action="/titleregister/create" method="POST" >
