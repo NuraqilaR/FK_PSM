@@ -30,6 +30,7 @@
                                 {{ __('Register Title') }}
                             </x-jet-nav-link>
                         </div> --}}
+                       
                     </div>
 
             <!-- For Lecturer -->
@@ -47,6 +48,11 @@
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-jet-nav-link href="{{ route('lecturer') }}" :active="request()->routeIs('lecturer')">
                                 {{ __('Dashboard') }}
+                            </x-jet-nav-link>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('scheduleReq') }}" :active="request()->routeIs('scheduleReq')">
+                                {{ __('Appointment Requests') }}
                             </x-jet-nav-link>
                         </div>
                     </div>
@@ -75,6 +81,11 @@
                                 {{ __('Register Title') }}
                             </x-jet-nav-link>
                         </div> --}}
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('schedule.index') }}" :active="request()->routeIs('schedule')">
+                                {{ __('Schedule Appointment') }}
+                            </x-jet-nav-link>
+                        </div>
                     </div>
                 @endif
 

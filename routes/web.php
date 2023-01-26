@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\TitleController;
 
 /*
@@ -67,3 +68,18 @@ Route::get('/RegisterTitle', function () {
 //create registration
 Route::post('/ViewRegisterStatus', [TitleController::class, 'store'])->name('ViewRegisterStatus');
 
+//view status at mainpage
+// Route::get('TitleMainpageStu','App\Http\Controllers\TitleController@TitleMainpageStu');
+
+
+/*
+|--------------------------------------------------------------------------
+|Schedule -Takippu
+|--------------------------------------------------------------------------
+|
+*/
+Route::get('/schedule-requests', [App\Http\Controllers\ScheduleController::class, 'indexReq'])->name('scheduleReq');
+Route::put('/schedule-accept', [App\Http\Controllers\ScheduleController::class, 'acceptSchedule'])->name('acceptReq');
+Route::put('/schedule-reject', [App\Http\Controllers\ScheduleController::class, 'rejectSchedule'])->name('rejectReq');
+
+Route::resource('/schedule', ScheduleController::class);
