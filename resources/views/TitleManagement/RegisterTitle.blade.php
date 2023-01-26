@@ -54,7 +54,7 @@
 
                         {{-- <div class="card-body"> --}}
                             
-                            <h5><b>SECTION A: STUDENT DETAILS</b></h5><br><br>
+                            {{-- <h5><b>SECTION A: STUDENT DETAILS</b></h5><br><br> --}}
 
                             {{-- <center>
                             <tr>
@@ -72,7 +72,7 @@
                             <form action="{{url('/titleregister/create')}}" method="POST" >
                                 {!!csrf_field()!!}                          
 
-                                <h5><b>SECTION B: PROJECT DETAILS</b></h5><br>
+                                <h5><b>SECTION A: PROJECT DETAILS</b></h5><br>
                                 
                                 <!-- Supervisor's Name -->
                                 <div class="mb-3">
@@ -106,7 +106,7 @@
 
                                 <br><br>
 
-                                <h5><b>SECTION C: PROJECT NEEDS</b></h5><br>
+                                <h5><b>SECTION B: PROJECT NEEDS</b></h5><br>
 
                                 <!-- Software Used on Project-->
                                 <div class="mb-3">

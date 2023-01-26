@@ -65,5 +65,14 @@ Route::get('/RegisterTitle', function () {
 // });
 
 //create registration
-Route::post('/ViewRegisterStatus', [TitleController::class, 'store'])->name('ViewRegisterStatus');
 
+Route::post('/registertitle/create','App\Http\Controllers\TitleController@CreateRegistration');
+
+//edit form
+Route::get('/registertitle/{Reg_id}/edit','App\Http\Controllers\TitleController@EditRegister');
+
+//update
+Route::post('/registertitle/{Reg_id}/update','App\Http\Controllers\TitleController@update');
+
+//delete
+Route::get('/registertitle/{Reg_id}/delete','App\Http\Controllers\TitleController@delete');

@@ -42,19 +42,28 @@ class TitleController extends Controller
     //     return view ('TitleManagement.ViewRegisterStatus')->with('title', $title);
     // }
 
+    //call edit rubric form  
+    public function EditRegister($Reg_id ){
+        $title = title::find($Reg_id);
+        return view('TitleManagement/EditRegister',['title'=>$title]);
+    }
+
     //Update Registration
     public function update(Request $request, $Reg_id)
     {
         $title = title::find($Reg_id);
         $input = $request->all();
         $title->update($input);
-        return redirect('TitleManagement.EditRegister')->with('flash_message', 'Title Registration Succesfully Update!');
+        return redirect('/registertitle')->with('flash_message', 'Title Registration Succesfully Update!');
     }
 
-    public function destroy($Reg_id)
-    {
-        title::destroy($Reg_id);
-        return redirect ('TitleManagement.TitleMainpageStu')->with('flash_message', 'Register Info deleted!');
+
+    //delete Rubric
+    public function delete($Reg_id){
+        $title = \App\Models\title::find($Reg_id);
+        $title -> delete($delete);
+
+        return redirect('/registertitle')->with('success','Data Successfully Deleted');
     }
     
 }
