@@ -54,7 +54,7 @@
 
                         {{-- <div class="card-body"> --}}
                             
-                            <h5><b>SECTION A: STUDENT DETAILS</b></h5><br><br>
+                            {{-- <h5><b>SECTION A: STUDENT DETAILS</b></h5><br><br> --}}
 
                             {{-- <center>
                             <tr>
@@ -69,10 +69,10 @@
                         </div> --}}
 
                         <div class="card-body">
-                            <form action="{{url('/titleregister/create')}}" method="POST" >
-                                {!!csrf_field()!!}                          
+                            <form action="/titleregister/create" method="POST" >
+                                {{csrf_field()}}                        
 
-                                <h5><b>SECTION B: PROJECT DETAILS</b></h5><br>
+                                <h5><b>SECTION A: PROJECT DETAILS</b></h5><br>
                                 
                                 <!-- Supervisor's Name -->
                                 <div class="mb-3">
@@ -106,7 +106,7 @@
 
                                 <br><br>
 
-                                <h5><b>SECTION C: PROJECT NEEDS</b></h5><br>
+                                <h5><b>SECTION B: PROJECT NEEDS</b></h5><br>
 
                                 <!-- Software Used on Project-->
                                 <div class="mb-3">
@@ -128,7 +128,7 @@
 
                                 <div class="mb-3">
                                     <label for="Stu_Status" class="form-label"><b>TECHNIQUE/APPROACH/ALGORITHM</b></label>
-                                    <input name="Stu_Status" type="text" class="form-control" id="Stu_Status" placeholder="Enter Project Approach">
+                                    <input name="Stu_Status" type="text" class="form-control" id="Stu_Status" placeholder="Approve by supervisor (Yes/No)">
                                 </div>
                                 
                                 <button type="submit" class="btn btn-primary float-end">SUBMIT</button>

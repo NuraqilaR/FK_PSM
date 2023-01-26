@@ -1,7 +1,6 @@
-<x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text xl text-gray-800 leading-tight"><center>
-            {{ __('PSM TITLE REGISTRATION')}}
+            {{ __('PSM APPROVAL')}}
         </center>
         </h2>
     </x-slot>
@@ -42,11 +41,6 @@
                                 <td>
                                     <a href="{{ url('/TitleManagement/' . $item->Reg_id) }}" title="View Form"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                     <a href="{{ url('/TitleManagement/' . $item->Reg_id . '/edit') }}" title="Edit Form"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-                                    <form method="POST" action="{{ url('/Lecturer' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
-                                        {{ method_field('DELETE') }}
-                                        {{ csrf_field() }}
-                                        <button type="submit" class="btn btn-danger btn-sm" title="Delete Lecturer" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
-                                    </form>
                                 </td>
                             </tr>
                         @endforeach
@@ -58,4 +52,3 @@
             </div>
         </div>    
     </div>    
-</x-app-layout>

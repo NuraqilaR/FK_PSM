@@ -25,11 +25,11 @@
                                 {{ __('User') }}
                             </x-jet-nav-link>
                         </div>
-                        {{-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <x-jet-nav-link href="{{ route('titlemainpagestu') }}" :active="request()->routeIs('TitleMainpageStu')">
-                                {{ __('Register Title') }}
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('titlemainpagestu') }}" :active="request()->routeIs('TitleMainpageCoor')">
+                                {{ __('Approval') }}
                             </x-jet-nav-link>
-                        </div> --}}
+                        </div>
                        
                     </div>
 
@@ -80,12 +80,12 @@
                             </x-jet-nav-link>
                         </div>
 
-                        <!-- Navigation Links -->
-                        {{-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <x-jet-nav-link href="{{ route('titlemainpagestu') }}" :active="request()->routeIs('titlemainpagestu')">
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('TitleManagement.titlemainpagestu') }}" :active="request()->routeIs('TitleManagement')">
                                 {{ __('Register Title') }}
                             </x-jet-nav-link>
-                        </div> --}}
+                        </div>
+
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-jet-nav-link href="{{ route('schedule.index') }}" :active="request()->routeIs('schedule')">
                                 {{ __('Schedule Appointment') }}
