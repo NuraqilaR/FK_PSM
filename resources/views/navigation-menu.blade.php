@@ -25,6 +25,11 @@
                                 {{ __('User') }}
                             </x-jet-nav-link>
                         </div>
+                        {{-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('titlemainpagestu') }}" :active="request()->routeIs('TitleMainpageStu')">
+                                {{ __('Register Title') }}
+                            </x-jet-nav-link>
+                        </div> --}}
                     </div>
 
             <!-- For Lecturer -->
@@ -63,6 +68,13 @@
                                 {{ __('Dashboard') }}
                             </x-jet-nav-link>
                         </div>
+
+                        <!-- Navigation Links -->
+                        {{-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('titlemainpagestu') }}" :active="request()->routeIs('titlemainpagestu')">
+                                {{ __('Register Title') }}
+                            </x-jet-nav-link>
+                        </div> --}}
                     </div>
                 @endif
 

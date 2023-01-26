@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('Stu_SoftUse');
             $table->string('Stu_ToolsUse');
             $table->string('Stu_Approach');
-            $table->string('Stu_Status');
+            $table->string('Stu_Status')->nullable();
             $table->timestamps();
         });
     }

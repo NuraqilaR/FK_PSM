@@ -29,7 +29,13 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    
+    // Route::get('/TitleMainpageStu', function () {
+    //     return view('titlemainpagestu');
+    // })->name('TitleManagement.TitleMainpageStu');
+    
 });
+
 
 Route::get('/coordinator', [HomeController::class, 'index'])->name('coordinator');
 Route::get('/lecturer', [HomeController::class, 'index'])->name('lecturer');
@@ -53,8 +59,11 @@ Route::get('/RegisterTitle', function () {
     return view('TitleManagement.RegisterTitle');
 });
 
-//create registration
-Route::post('TitleMainpageStu/create','App\Http\Controllers\TitleController@create');
+//View Registration Status
+// Route::get('/ViewRegistrationStatus', function () {
+//     return view('TitleManagement.ViewRegistrationStatus');
+// });
 
-//view status at mainpage
-// Route::get('TitleMainpageStu','App\Http\Controllers\TitleController@TitleMainpageStu');
+//create registration
+Route::post('/ViewRegisterStatus', [TitleController::class, 'store'])->name('ViewRegisterStatus');
+
