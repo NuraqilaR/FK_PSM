@@ -4,7 +4,7 @@
         <div class="flex justify-between h-16">
 
             <!-- For Coordinator -->
-                @if ($role = 1)
+                @if (auth()->user()->role == 1)
                     <div class="flex">
                     <!-- Logo -->
                         <div class="shrink-0 flex items-center">
@@ -34,7 +34,7 @@
                     </div>
 
             <!-- For Lecturer -->
-                @elseif ($role = 2)
+                @elseif (auth()->user()->role == 2)
                     <div class="flex">
                     <!-- Logo -->
                         <div class="shrink-0 flex items-center">
