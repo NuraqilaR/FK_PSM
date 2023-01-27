@@ -29,7 +29,7 @@
                         <td><h4>Evaluation</h4></td>
                     </div>
                     <div style="float:right">
-                        <td><a href="LecturerEvaluationMainpage" class="btn btn-primary">Apply</a></td>
+                        <td><a href="LecturerEvaluationMainpage" class="btn btn-primary">Open</a></td>
                     </div>
                 </div>
             </div>
