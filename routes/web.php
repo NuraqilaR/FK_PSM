@@ -127,7 +127,6 @@ Route::get('eviewPSM2','App\Http\Controllers\RubricController@eviewPSM2');
 Route::get('eviewPTA','App\Http\Controllers\RubricController@eviewPTA');
 
 
-
 //Mainpage of student
 Route::get('/TitleMainpageStu', [TitleController::class, ('TitleMainpageStu')]);
 
@@ -158,3 +157,67 @@ Route::post('/registertitle/{Reg_id}/update','App\Http\Controllers\TitleControll
 Route::get('/registertitle/{Reg_id}/delete','App\Http\Controllers\TitleController@delete');
 
 Route::resource('/TitleManagement', TitleController::class);
+
+
+/*
+|--------------------------------------------------------------------------
+| Manage Evaluation - QILA
+|--------------------------------------------------------------------------
+*/
+
+//manage evaluation mainpage
+Route::get('LecturerEvaluationMainpage', function () {
+    return view('ManageEvaluation.EvaluationMainpage');
+});
+Route::get('CoordinatorEvaluationMainpage', function () {
+    return view('ManageEvaluation.CoordinatorEvaluationMainpage');
+});
+
+// web routing manage evaluation for lecturer (supervisee / evaluator)
+//open all add form
+Route::get('AddEvaluationMarkSupervisee1','App\Http\Controllers\EvaluationController@AddEvaluationMarkSupervisee1');
+Route::get('AddEvaluationMarkEvaluatee1','App\Http\Controllers\EvaluationController@AddEvaluationMarkEvaluatee1');
+Route::get('AddEvaluationMarkSupervisee2','App\Http\Controllers\EvaluationController@AddEvaluationMarkSupervisee2');
+Route::get('AddEvaluationMarkEvaluatee2','App\Http\Controllers\EvaluationController@AddEvaluationMarkEvaluatee2');
+
+//create 
+Route::post('/create','App\Http\Controllers\EvaluationController@create');
+Route::post('/createEva','App\Http\Controllers\EvaluationController@createEva');
+
+// view Mark Supervisee
+Route::get('ViewMarkSupervisee','App\Http\Controllers\EvaluationController@ViewMarkSupervisee');
+
+// view Mark evaluatee
+Route::get('ViewMarkEvaluatee','App\Http\Controllers\EvaluationController@ViewMarkEvaluatee');
+
+//edit form supervisee
+Route::get('/ViewMarkSupervisee/{id}/edit','App\Http\Controllers\EvaluationController@edit');
+
+//update supervisee
+Route::post('/ViewMarkSupervisee/{id}/update','App\Http\Controllers\EvaluationController@update');
+
+//edit form evaluatee
+Route::get('/ViewMarkEvaluatee/{id}/editEva','App\Http\Controllers\EvaluationController@editEva');
+
+//update evaluatee
+Route::post('/ViewMarkEvaluatee/{id}/updateEva','App\Http\Controllers\EvaluationController@updateEva');
+
+//delete mark supervisee
+Route::get('/ViewMarkSupervisee/{id}/delete','App\Http\Controllers\EvaluationController@destroy');
+
+//delete mark evaluatee
+Route::get('/ViewMarkEvaluatee/{id}/delete','App\Http\Controllers\EvaluationController@destroyEva');
+
+
+// web routing manage evaluation for coordinator
+// view Mark supervisee for PSM1 AND PTA1
+Route::get('ViewMarkSuperviseePSM1PTA1','App\Http\Controllers\EvaluationController@ViewMarkSuperviseePSM1PTA1');
+
+// view Mark supervisee for PSM2 AND PTA2
+Route::get('ViewMarkSuperviseePSM2PTA2','App\Http\Controllers\EvaluationController@ViewMarkSuperviseePSM2PTA2');
+
+// view Mark evaluatee for PSM1 AND PTA1
+Route::get('ViewMarkEvaluateePSM1PTA1','App\Http\Controllers\EvaluationController@ViewMarkEvaluateePSM1PTA1');
+
+// view Mark evaluatee for PSM2 AND PTA2
+Route::get('ViewMarkEvaluateePSM2PTA2','App\Http\Controllers\EvaluationController@ViewMarkEvaluateePSM2PTA2');
