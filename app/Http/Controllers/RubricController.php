@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class RubricController extends Controller
 {
+
     //view Rubric
 public function viewRubric(){
     $data_rubric = \App\Models\Rubric::all();

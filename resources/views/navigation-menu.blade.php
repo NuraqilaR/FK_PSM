@@ -60,6 +60,11 @@
                                 {{ __('Report Progress') }}
                             </x-jet-nav-link>
                         </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('viewRubric') }}" :active="request()->routeIs('ManageRubric.viewRubric')">
+                                {{ __('Report Progress') }}
+                            </x-jet-nav-link>
+                        </div>
                     </div>
 
             <!-- For Student -->
@@ -93,6 +98,11 @@
                         </div>
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-jet-nav-link href="{{ route('reports.index') }}" :active="request()->routeIs('reports.index')">
+                                {{ __('Report Progress') }}
+                            </x-jet-nav-link>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('viewRubric') }}" :active="request()->routeIs('ManageRubric.viewRubric')">
                                 {{ __('Report Progress') }}
                             </x-jet-nav-link>
                         </div>
