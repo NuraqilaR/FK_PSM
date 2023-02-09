@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('role')->udefault(0); //value 0=student, 1=coordinator, 2=lecturer
+            $table->string('role')->default(0); //value 0=student, 1=coordinator, 2=lecturer
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
@@ -31,7 +31,7 @@ return new class extends Migration
             //Lecturer
             ['id' => '2', 'name' => 'Zulfahmi',  'email' => 'zulfahmi@gmail.com',  'role' => '2', 'password' => '$2y$10$QstNUsCP5hzBpofmgvcEOeDDZOeLE3L4dgP4oegtpgbXGdAVyoG2.'], //zulfahmi123
 
-            //Lecturer
+            //Student
             ['id' => '3', 'name' => 'Fatimah',  'email' => 'fatimah@gmail.com',  'role' => '0', 'password' => '$2y$10$hjx/UmImr3RdP2q3kSVURuLEo72I.5ZlvIjw71gkAvN29lQXfxVIK'], //fatimah123
 
             ]);
