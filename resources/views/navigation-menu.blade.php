@@ -4,7 +4,7 @@
         <div class="flex justify-between h-16">
 
             <!-- For Coordinator -->
-                @if ($role = 1)
+                @if (auth()->user()->role == 1)
                     <div class="flex">
                     <!-- Logo -->
                         <div class="shrink-0 flex items-center">
@@ -25,10 +25,16 @@
                                 {{ __('User') }}
                             </x-jet-nav-link>
                         </div>
+                        {{-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('titlemainpagestu') }}" :active="request()->routeIs('TitleMainpageCoor')">
+                                {{ __('Approval') }}
+                            </x-jet-nav-link>
+                        </div> --}}
+                       
                     </div>
 
             <!-- For Lecturer -->
-                @elseif ($role = 2)
+                @elseif (auth()->user()->role == 2)
                     <div class="flex">
                     <!-- Logo -->
                         <div class="shrink-0 flex items-center">
@@ -42,6 +48,21 @@
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-jet-nav-link href="{{ route('lecturer') }}" :active="request()->routeIs('lecturer')">
                                 {{ __('Dashboard') }}
+                            </x-jet-nav-link>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('scheduleReq') }}" :active="request()->routeIs('scheduleReq')">
+                                {{ __('Appointment Requests') }}
+                            </x-jet-nav-link>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('lecturerReport') }}" :active="request()->routeIs('lecturerReport')">
+                                {{ __('Report Progress') }}
+                            </x-jet-nav-link>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('viewRubric') }}" :active="request()->routeIs('ManageRubric.viewRubric')">
+                                {{ __('Report Progress') }}
                             </x-jet-nav-link>
                         </div>
                     </div>
@@ -66,6 +87,26 @@
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                                 {{ __('Title') }}
+
+                        {{-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('TitleManagement.titlemainpagestu') }}" :active="request()->routeIs('TitleManagement')">
+                                {{ __('Register Title') }}
+                            </x-jet-nav-link>
+                        </div> --}}
+
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('schedule.index') }}" :active="request()->routeIs('schedule')">
+                                {{ __('Schedule Appointment') }}
+                            </x-jet-nav-link>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('reports.index') }}" :active="request()->routeIs('reports.index')">
+                                {{ __('Report Progress') }}
+                            </x-jet-nav-link>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('viewRubric') }}" :active="request()->routeIs('ManageRubric.viewRubric')">
+                                {{ __('Report Progress') }}
                             </x-jet-nav-link>
                         </div>
                     </div>
